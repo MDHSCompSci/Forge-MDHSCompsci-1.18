@@ -1,4 +1,4 @@
-package com.mdhscompsci.mdhsmod.common;
+package com.mdhscompsci.mdhsmod.common.item;
 
 import net.minecraft.world.item.Item;
 
