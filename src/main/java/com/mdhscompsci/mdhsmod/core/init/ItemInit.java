@@ -1,6 +1,6 @@
 package com.mdhscompsci.mdhsmod.core.init;
 
-import com.mdhscompsci.mdhsmod.core.MdhsMod;
+import com.mdhscompsci.mdhsmod.MdhsMod;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
