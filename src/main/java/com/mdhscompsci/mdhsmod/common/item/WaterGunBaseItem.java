@@ -26,12 +26,20 @@ public class WaterGunBaseItem extends Item {
     @Override
     public InteractionResult interactLivingEntity (ItemStack pStack, Player pPlayer, LivingEntity pInteractionTarget, InteractionHand pUsedHand) {
         try {
+            //Try and hurt the target, invulnerable entities raise an error
             pInteractionTarget.hurt(DamageSource.indirectMobAttack(pPlayer, pPlayer), this.damage);
         } catch (Exception e) {
+            //Do not use the right click animation, stop all further execution on error
             return InteractionResult.FAIL;
         }
 
-        showWaterLaser(pPlayer, pInteractionTarget.getEyePosition(), (byte) (3^this.tier));
+        //Un-ignite mobs
+        pInteractionTarget.setRemainingFireTicks(0);
+
+        //Show the water beam
+        showWaterLaser(pPlayer, pInteractionTarget.getEyePosition(), (byte) (Math.pow(3, this.tier));
+
+        //Use the right click animation
         return InteractionResult.SUCCESS;
     }
 
@@ -57,4 +65,6 @@ public class WaterGunBaseItem extends Item {
             lc = lc.add(laser_particle_increment_distance);
         }
     }
+
+
 }
