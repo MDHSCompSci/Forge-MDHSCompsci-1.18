@@ -12,10 +12,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.ParametersAreNonnullByDefault;
 
 public class WaterGunBaseItem extends Item {
-    private float damage;
-    private byte tier;
+    private final float damage;
+    private final byte tier;
 
     public WaterGunBaseItem (float damage, int tier) {
         super(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).rarity((tier<=3)?  Rarity.COMMON : Rarity.UNCOMMON));
@@ -24,7 +27,8 @@ public class WaterGunBaseItem extends Item {
     }
 
     @Override
-    public InteractionResult interactLivingEntity (ItemStack pStack, Player pPlayer, LivingEntity pInteractionTarget, InteractionHand pUsedHand) {
+    @ParametersAreNonnullByDefault
+    public @NotNull InteractionResult interactLivingEntity (ItemStack pStack, Player pPlayer, LivingEntity pInteractionTarget, InteractionHand pUsedHand) {
         try {
             //Try and hurt the target, invulnerable entities raise an error
             pInteractionTarget.hurt(DamageSource.indirectMobAttack(pPlayer, pPlayer), this.damage);
@@ -37,7 +41,7 @@ public class WaterGunBaseItem extends Item {
         pInteractionTarget.setRemainingFireTicks(0);
 
         //Show the water beam
-        showWaterLaser(pPlayer, pInteractionTarget.getEyePosition(), (byte) (Math.pow(3, this.tier));
+        showWaterLaser(pPlayer, pInteractionTarget.getEyePosition(), (byte) (Math.pow(3, this.tier)));
 
         //Use the right click animation
         return InteractionResult.SUCCESS;
