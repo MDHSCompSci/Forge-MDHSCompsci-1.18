@@ -1,6 +1,6 @@
-package com.mdhscompsci.mdhsmod.core;
+package com.mdhscompsci.mdhsmod;
 
-import net.minecraft.world.level.block.Blocks;
+import com.mdhscompsci.mdhsmod.core.init.ItemInit;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -24,13 +24,11 @@ public class MdhsMod
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        ItemInit.ITEMS.register(eventBus);
     }
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        // some preinit code
-        //LOGGER.info("HELLO FROM PREINIT");
-        //LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
 
 }
