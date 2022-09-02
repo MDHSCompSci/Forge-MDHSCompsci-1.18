@@ -23,7 +23,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
-
 public class WaterGunBaseItem extends Item {
     private final float damage;
     private final byte tier;
