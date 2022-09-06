@@ -87,8 +87,7 @@ public class WaterGunBaseItem extends Item {
         //Getting the name of the gun hold on player's hand
         ItemStack havenow = pPlayer.getItemInHand(pUsedHand);
         String strhavenow = String.valueOf(havenow);
-        String FullName = strhavenow.split("_")[0];
-        String name = FullName.split(" ")[1];
+        String FullName = strhavenow.split(" ")[1];
         //Should add if statement to check the name and assign right empty water gun
         //pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand())
         pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer, (player) -> player.setItemInHand(pUsedHand, havenow));
