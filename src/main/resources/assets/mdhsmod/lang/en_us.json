@@ -4,5 +4,11 @@
   "item.mdhsmod.iron_water_gun": "Iron Water Gun",
   "item.mdhsmod.gold_water_gun": "Gold Water Gun",
   "item.mdhsmod.diamond_water_gun": "Diamond Water Gun",
-  "item.mdhsmod.netherite_water_gun": "Netherite Water Gun"
+  "item.mdhsmod.netherite_water_gun": "Netherite Water Gun",
+  "item.mdhsmod.empty_wooden_water_gun": "Empty Wooden Water Gun",
+  "item.mdhsmod.empty_stone_water_gun": "Empty Stone Water Gun",
+  "item.mdhsmod.empty_iron_water_gun": "Empty Iron Water Gun",
+  "item.mdhsmod.empty_gold_water_gun": "Empty Gold Water Gun",
+  "item.mdhsmod.empty_diamond_water_gun": "Empty Diamond Water Gun",
+  "item.mdhsmod.empty_netherite_water_gun": "Empty Netherite Water Gun"
 }
