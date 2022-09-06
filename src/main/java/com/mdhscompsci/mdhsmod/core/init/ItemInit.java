@@ -2,7 +2,6 @@ package com.mdhscompsci.mdhsmod.core.init;
 
 import com.mdhscompsci.mdhsmod.MdhsMod;
 import com.mdhscompsci.mdhsmod.common.item.WaterGunBaseItem;
-import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
