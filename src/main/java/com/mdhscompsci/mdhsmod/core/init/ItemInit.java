@@ -15,7 +15,7 @@ public class ItemInit {
 
     //Adding water gun items
     public static final RegistryObject<Item> WOODEN_WATER_GUN = ITEMS.register("wooden_water_gun", () ->
-            new WaterGunBaseItem(0.0f, 1, 4.0));
+            new WaterGunBaseItem(1.0f, 1, 4.0));
     public static final RegistryObject<Item> STONE_WATER_GUN = ITEMS.register("stone_water_gun", () ->
             new WaterGunBaseItem(2.0f, 1, 6.0));
     public static final RegistryObject<Item> IRON_WATER_GUN = ITEMS.register("iron_water_gun", () ->

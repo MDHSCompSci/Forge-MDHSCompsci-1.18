@@ -34,7 +34,7 @@ public class WaterGunBaseItem extends Item {
         this.tier = (byte) tier;
         this.range = range;
     }
-
+    
     @Override
     @NotNull
     @ParametersAreNonnullByDefault
