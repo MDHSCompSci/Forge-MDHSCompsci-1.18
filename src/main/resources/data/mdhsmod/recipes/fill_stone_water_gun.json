@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    " / ",
+    "   "
+  ],
+  "key": {
+    "X": {
+      "item": "mdhsmod:empty_stone_water_gun"
+    },
+    "/": {
+      "type": "forge:nbt",
+      "item": "minecraft:potion",
+      "nbt": "{Potion:'minecraft:water'}"
+    }
+  },
+  "result": {
+    "item": "mdhsmod:stone_water_gun"
+  }
+}

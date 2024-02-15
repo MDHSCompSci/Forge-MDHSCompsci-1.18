@@ -29,12 +29,13 @@ public class WaterGunBaseItem extends Item {
     private final double range;
 
     public WaterGunBaseItem (float damage, int tier, double range) {
-        super(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).rarity((tier<=3)?  Rarity.COMMON : Rarity.UNCOMMON));
+        super(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).rarity((tier<=3)?  Rarity.COMMON : Rarity.UNCOMMON).durability(16));
         this.damage = damage;
         this.tier = (byte) tier;
         this.range = range;
+
     }
-    
+
     @Override
     @NotNull
     @ParametersAreNonnullByDefault
@@ -83,7 +84,13 @@ public class WaterGunBaseItem extends Item {
                 hit.setRemainingFireTicks(0);
             } catch (Exception ignored) {}
         }
-
+        //Getting the name of the gun hold on player's hand
+        ItemStack havenow = pPlayer.getItemInHand(pUsedHand);
+        String strhavenow = String.valueOf(havenow);
+        String FullName = strhavenow.split(" ")[1];
+        //Should add if statement to check the name and assign right empty water gun
+        //pPlayer.broadcastBreakEvent(pPlayer.getUsedItemHand())
+        pPlayer.getItemInHand(pUsedHand).hurtAndBreak(1, pPlayer, (player) -> player.setItemInHand(pUsedHand, havenow));
         //Showing the water beam of particles from the player to just before the collision point
         showWaterLaser(pPlayer, cur_pos, (byte) (Math.pow(3, this.tier)));
         //SOUND

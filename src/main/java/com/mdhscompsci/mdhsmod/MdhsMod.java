@@ -1,5 +1,7 @@
 package com.mdhscompsci.mdhsmod;
 
+import com.mdhscompsci.mdhsmod.core.init.EntityInit;
+import com.mdhscompsci.mdhsmod.common.item.emptyWaterGun;
 import com.mdhscompsci.mdhsmod.core.init.ItemInit;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,6 +27,13 @@ public class MdhsMod
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         ItemInit.ITEMS.register(eventBus);
+        EntityInit.ENTITIES.register(eventBus);
+
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        emptyWaterGun.register(bus);
+        bus.addListener(this::setup);
+        // Register ourselves for server and other game events we are interested in
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event)
